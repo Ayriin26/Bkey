@@ -54,5 +54,5 @@ This project converts **Braille dot patterns → English text** and **speaks the
 ## 🌍 Live Demo
 
 🔗 **Hosted Link:**  
-(Insert your GitHub Pages link after deploying)
+https://ayriin26.github.io/Bkey/
 
