@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BKey - Braille Typing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1 class="app-title">BKey</h1>
+        <p class="app-subtitle">Braille Numpad Typing & Audio Feedback System</p>
+    </header>
+
+    <div class="container">
+        <div class="left-panel">
+            <div class="numpad">
+                <div class="key" data-key="7" data-action="backspace">
+                    <span>7</span>
+                    <span class="key-label">Backspace</span>
+                </div>
+                <div class="key" data-key="8" data-dot="1">
+                    <span>8</span>
+                    <div class="braille-dots">
+                        <div class="dot filled"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="key" data-key="9" data-dot="2">
+                    <span>9</span>
+                    <div class="braille-dots">
+                        <div class="dot"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                
+                <div class="key" data-key="4" data-action="enter">
+                    <span>4</span>
+                    <span class="key-label">Enter</span>
+                </div>
+                <div class="key" data-key="5" data-dot="3">
+                    <span>5</span>
+                    <div class="braille-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="key" data-key="6" data-dot="4">
+                    <span>6</span>
+                    <div class="braille-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                
+                <div class="key" data-key="1" data-action="break">
+                    <span>1</span>
+                    <span class="key-label">Break</span>
+                </div>
+                <div class="key" data-key="2" data-dot="5">
+                    <span>2</span>
+                    <div class="braille-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot filled"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="key" data-key="3" data-dot="6">
+                    <span>3</span>
+                    <div class="braille-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot filled"></div>
+                    </div>
+                </div>
+                
+                <div class="key space" data-key="0" data-action="space">
+                    <span>0</span>
+                    <span class="key-label">Space</span>
+                </div>
+                <div class="key" data-key="." data-action="delete">
+                    <span>.</span>
+                    <span class="key-label">Delete</span>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <div class="section-title">How to Use</div>
+                <ul>
+                    <li><strong>8, 9, 5, 6, 2, 3:</strong> Braille dots 1–6</li>
+                    <li><strong>0 (Space):</strong> Ends a letter (no speech)</li>
+                    <li><strong>1 (Break):</strong> Ends a word & speaks full sentence</li>
+                    <li><strong>4 (Enter):</strong> New line & speaks full paragraph</li>
+                    <li><strong>7 (Backspace):</strong> Deletes last dot / character</li>
+                    <li><strong>. (Delete):</strong> Clears current dot sequence</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="status-bar">
+                <div class="status-indicator">
+                    <div class="indicator-light on"></div>
+                    <span>Num Lock On!</span>
+                </div>
+                <div class="status-indicator">
+                    <div class="indicator-light on" id="audio-indicator"></div>
+                    <span id="audio-status">Audio: ON</span>
+                </div>
+            </div>
+
+            <div class="display-area">
+                <div class="section-title">Input</div>
+                <div id="input-display"></div>
+                
+                <div class="section-title">Output</div>
+                <div id="output-display">Type Something...</div>
+            </div>
+
+            <div class="controls">
+                <button onclick="clearAll()">Clear All</button>
+                <button onclick="toggleAudio()">Toggle Audio</button>
+                <button onclick="copyOutput()">Copy Output</button>
+                <button onclick="speakOutput()">Speak Output</button>
+            </div>
+
+            <div class="key-mapping">
+                <div class="section-title">Key Mapping Guide</div>
+                <div class="mapping-grid" id="mapping-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
